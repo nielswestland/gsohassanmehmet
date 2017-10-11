@@ -9,8 +9,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import static java.awt.Color.BLACK;
-
 public class AEXBanner extends Application
 {
     public static final int WIDTH = 1000;
@@ -27,8 +25,6 @@ public class AEXBanner extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        controller = new BannerController(this);
-
         Font font = new Font("Arial", HEIGHT);
         text = new Text();
         text.setFont(font);
@@ -43,6 +39,7 @@ public class AEXBanner extends Application
         primaryStage.show();
         primaryStage.toFront();
 
+        controller = new BannerController(this);
 
         // Start animation: text moves from right to left
         animationTimer = new AnimationTimer()
@@ -57,6 +54,16 @@ public class AEXBanner extends Application
                 {
                     // calculate new location of text
                     // TODO
+                    if(text != null && (text.getLayoutX() < 0 - textLength))
+                    {
+                        textPosition = WIDTH;
+                    }
+
+                    else
+                    {
+                        textPosition -= 3;
+                    }
+
                     text.relocate(textPosition, 0);
                     prevUpdate = now;
                 }
@@ -68,7 +75,6 @@ public class AEXBanner extends Application
                 prevUpdate = System.nanoTime();
                 textPosition = WIDTH;
                 text.relocate(textPosition, 0);
-                setKoersen("Nothing to display");
                 super.start();
             }
         };
