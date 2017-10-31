@@ -30,7 +30,6 @@ public class Fonds implements IFonds
         return koers;
     }
 
-    @Override
     public void setKoers(double koers)
     {
         this.koers = koers;

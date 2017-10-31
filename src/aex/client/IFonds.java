@@ -1,8 +1,10 @@
 package aex.client;
 
-public interface IFonds
+import java.io.Serializable;
+import java.rmi.Remote;
+
+public interface IFonds extends Serializable
 {
     String getNaam();
     double getKoers();
-    void setKoers(double koers);
 }

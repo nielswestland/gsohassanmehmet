@@ -1,5 +1,6 @@
 package aex.client;
 
+import java.rmi.RemoteException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,9 +41,17 @@ public class BannerController
     {
         String koersenString = "";
 
-        for(IFonds koers : effectenbeurs.getKoersen())
+        try
         {
-            koersenString += koers.getNaam() + ": " + String.format("%.2f", koers.getKoers()) + " ";
+            for(IFonds koers : effectenbeurs.getKoersen())
+            {
+                koersenString += koers.getNaam() + ": " + String.format("%.2f", koers.getKoers()) + " ";
+            }
+        }
+
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
         }
 
         return koersenString;

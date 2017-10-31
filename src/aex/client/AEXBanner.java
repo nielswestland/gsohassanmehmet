@@ -2,6 +2,7 @@ package aex.client;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -81,10 +82,16 @@ public class AEXBanner extends Application
         animationTimer.start();
     }
 
-    public void setKoersen(String koersen)
+    public void setKoersen(final String koersen)
     {
-        text.setText(koersen);
-        textLength = text.getLayoutBounds().getWidth();
+        Platform.runLater(new Runnable()
+        {
+            public void run()
+            {
+                text.setText(koersen);
+                textLength = text.getLayoutBounds().getWidth();
+            }
+        });
     }
 
     @Override

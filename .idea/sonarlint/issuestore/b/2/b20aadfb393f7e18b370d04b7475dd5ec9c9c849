@@ -1,0 +1,47 @@
+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(’èÜ¶8êúâ–õ+
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ã”ˆË8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ïªĞ—8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ïªĞ—8êúâ–õ+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(î¬‘Òüÿÿÿÿ8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(íÛ´Š8êúâ–õ+
+Usquid:S1854":Remove this useless assignment to local variable "server".(Ÿ‚·`8Î†Û–õ+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Á°Ñ´øÿÿÿÿ8êÒà–õ+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(–¦úøÿÿÿÿ8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(’àûµ8êúâ–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(×î‰›8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÔÉ¾8êúâ–õ+
+vsquid:S1192"ZDefine a constant instead of duplicating this literal "Server: RemoteException: " 3 times.(ïªĞ—8êúâ–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ßÿñ·8êÒà–õ+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(‹ËëŠøÿÿÿÿ8êÒà–õ+
+gsquid:S2259"FA "NullPointerException" could be thrown; "registry" is nullable here.(ñ¹÷÷ûÿÿÿÿ8êúâ–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(áÙ‚8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(İÆ¯8êÒà–õ+
+Fsquid:S1481"+Remove this unused "server" local variable.(Ÿ‚·`8êÒà–õ+
+vsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÔÔt8êúâ–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ïªĞ—8êúâ–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(áÙ‚8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ıìŸ„8êÒà–õ+
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(©’ÊE8êÒà–õ+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(²‘Ñ®8êúâ–õ+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ô£­¿ıÿÿÿÿ8êúâ–õ+

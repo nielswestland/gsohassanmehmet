@@ -1,29 +1,40 @@
-package aex.client;
+package aex.server;
 
+import aex.client.Fonds;
+import aex.client.IEffectenBeurs;
+import aex.client.IFonds;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MockEffectenbeurs implements IEffectenBeurs
+public class Effectenbeurs extends UnicastRemoteObject implements IEffectenBeurs
 {
-    private List<IFonds> mockKoersen;
+    public Effectenbeurs() throws RemoteException
+    {
+
+    }
+
+    private List<IFonds> koersen;
 
     @Override
     public List<IFonds> getKoersen()
     {
-        if(mockKoersen != null)
+        if(koersen != null)
         {
             genereerRandomKoers();
         }
 
         else
         {
-            mockKoersen = new ArrayList<>();
+            koersen = new ArrayList<>();
             genereerKoersen();
             genereerRandomKoers();
         }
 
-        return mockKoersen;
+        return koersen;
     }
 
     private void genereerKoersen()
@@ -32,14 +43,14 @@ public class MockEffectenbeurs implements IEffectenBeurs
         Fonds tesla = new Fonds("Tesla", 0, "TES");
         Fonds apple = new Fonds("Apple", 0, "APP");
 
-        mockKoersen.add(hizmet);
-        mockKoersen.add(tesla);
-        mockKoersen.add(apple);
+        koersen.add(hizmet);
+        koersen.add(tesla);
+        koersen.add(apple);
     }
 
     private void genereerRandomKoers()
     {
-        for (IFonds ifonds : mockKoersen)
+        for (IFonds ifonds : koersen)
         {
             Fonds fonds = (Fonds) ifonds;
 
