@@ -1,5 +1,7 @@
 package aex.client;
 
+import aex.shared.IEffectenBeurs;
+
 import java.rmi.RemoteException;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -10,12 +12,20 @@ public class BannerController
     private IEffectenBeurs effectenbeurs;
     private Timer pollingTimer;
 
+    //RMI
+    private BeursClient client;
+
     public BannerController(AEXBanner banner)
     {
-        this.banner = banner;
-        this.effectenbeurs = new MockEffectenbeurs();
+        //RMI client setup
+        this.client = new BeursClient("localhost", 1099);
+        client.setBinding("Effectenbeurs");
 
-        // Start polling timer: update banner every two seconds
+        //Banner setup
+        this.banner = banner;
+        this.effectenbeurs = client.getEffectenbeurs();
+
+        //PollingTime voor het aanpassen van de koers
         pollingTimer = new Timer();
 
         pollingTimer.scheduleAtFixedRate(new TimerTask()
@@ -26,15 +36,13 @@ public class BannerController
                 banner.setKoersen(getKoersen());
                 System.out.println(getKoersen());
             }
-        }, 0 , 1000);
+        }, 0, 1000);
     }
 
     // Stop banner controller
     public void stop()
     {
         pollingTimer.cancel();
-        // Stop simulation timer of effectenbeurs
-        // TODO
     }
 
     public String getKoersen()
@@ -43,7 +51,7 @@ public class BannerController
 
         try
         {
-            for(IFonds koers : effectenbeurs.getKoersen())
+            for (IFonds koers : effectenbeurs.getKoersen())
             {
                 koersenString += koers.getNaam() + ": " + String.format("%.2f", koers.getKoers()) + " ";
             }

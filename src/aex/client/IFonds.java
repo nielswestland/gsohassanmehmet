@@ -1,7 +1,11 @@
 package aex.client;
 
 import java.io.Serializable;
-import java.rmi.Remote;
+
+/**
+ * Interface fonds (ook Serializable voor RMI)
+ * @author Niels Westland
+ */
 
 public interface IFonds extends Serializable
 {

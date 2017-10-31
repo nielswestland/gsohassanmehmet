@@ -1,15 +1,20 @@
 package aex.client;
 
+import aex.shared.IEffectenBeurs;
+
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.List;
 
+/**
+ * BeursClient voor het verbinden dmv RMI
+ * @author Niels Westland
+ */
+
 public class BeursClient
 {
-    private static final String bindingName = "Effectenbeurs";
-
     //Lokaal registry
     private Registry registry;
     private IEffectenBeurs effectenBeurs;
@@ -77,5 +82,10 @@ public class BeursClient
         {
             System.out.println("Kon geen fondsen binnenhalen");
         }
+    }
+
+    public IEffectenBeurs getEffectenbeurs()
+    {
+        return this.effectenBeurs;
     }
 }

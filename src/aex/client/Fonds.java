@@ -1,5 +1,10 @@
 package aex.client;
 
+/**
+ * Fonds
+ * @author Niels Westland
+ */
+
 public class Fonds implements IFonds
 {
     private String naam;

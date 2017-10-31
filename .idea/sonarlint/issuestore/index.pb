@@ -15,3 +15,5 @@ Q
 !src/aex/server/Effectenbeurs.java,f/e/fec6151b6ae553a41fa027ccd034708a1444aa32
 O
 src/aex/server/BeursServer.java,b/2/b20aadfb393f7e18b370d04b7475dd5ec9c9c849
+O
+src/aex/client/BeursClient.java,6/2/623ae743f4139ec25c5911f10a5fb568e4c1e7bf

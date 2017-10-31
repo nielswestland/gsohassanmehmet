@@ -1,7 +1,7 @@
 package aex.server;
 
 import aex.client.Fonds;
-import aex.client.IEffectenBeurs;
+import aex.shared.IEffectenBeurs;
 import aex.client.IFonds;
 
 import java.rmi.RemoteException;
@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Effectenbeurs (remote effectenbeurs)
+ * @author Niels Westland
+ */
+
+@SuppressWarnings("ALL")
 public class Effectenbeurs extends UnicastRemoteObject implements IEffectenBeurs
 {
     public Effectenbeurs() throws RemoteException
@@ -40,12 +46,14 @@ public class Effectenbeurs extends UnicastRemoteObject implements IEffectenBeurs
     private void genereerKoersen()
     {
         Fonds hizmet = new Fonds("Hizmet", 0, "HIZ");
-        Fonds tesla = new Fonds("Tesla", 0, "TES");
+        Fonds oracle = new Fonds("Oracle", 0, "ORA");
         Fonds apple = new Fonds("Apple", 0, "APP");
+        Fonds audi = new Fonds("Audi", 0, "AUD");
 
         koersen.add(hizmet);
-        koersen.add(tesla);
+        koersen.add(audi);
         koersen.add(apple);
+        koersen.add(oracle);
     }
 
     private void genereerRandomKoers()

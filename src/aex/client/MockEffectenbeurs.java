@@ -1,9 +1,18 @@
 package aex.client;
 
+import aex.shared.IEffectenBeurs;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @deprecated
+ * MockEffectenbeurs (locale effectenbeurs)
+ * @author Niels Westland
+ */
+
+@SuppressWarnings("ALL")
 public class MockEffectenbeurs implements IEffectenBeurs
 {
     private List<IFonds> mockKoersen;
