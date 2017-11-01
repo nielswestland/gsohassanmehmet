@@ -1,6 +1,4 @@
 
-R
-"src/aex/client/IEffectenBeurs.java,3/0/3057a4af3f56555f05180832b4670c00fd16af33
 I
 src/aex/client/Fonds.java,f/3/f39e74285f0897bffba9af8212a6ab04dd7e2684
 M
@@ -17,3 +15,17 @@ O
 src/aex/server/BeursServer.java,b/2/b20aadfb393f7e18b370d04b7475dd5ec9c9c849
 O
 src/aex/client/BeursClient.java,6/2/623ae743f4139ec25c5911f10a5fb568e4c1e7bf
+R
+"src/aex/shared/IEffectenBeurs.java,3/5/3562733eb0ad4d5b9f83f1d513ab920189b1ea15
+c
+3src/aex/fontyspublisher/ILocalPropertyListener.java,c/9/c93686815da08d8255eb02d0dfebcde18da179b0
+^
+.src/aex/fontyspublisher/IPropertyListener.java,8/6/86de05b417a60a2fd77f2f5e335fd31cadeeb0d6
+d
+4src/aex/fontyspublisher/IRemotePropertyListener.java,0/8/08332a95d33d7f17e1144dcb94ddc3173732d5df
+h
+8src/aex/fontyspublisher/IRemotePublisherForListener.java,5/4/54c887d312d572cfe12be96c1fb61425a3367031
+\
+,src/aex/fontyspublisher/RemotePublisher.java,b/5/b548a955e39625ad8b9ca1cbc632e1f2c9225140
+V
+&src/aex/fontyspublisher/Publisher.java,1/d/1da53e436b09d3473e203ec370697f2cf91e541e

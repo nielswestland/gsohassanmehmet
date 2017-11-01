@@ -1,16 +1,17 @@
 
-\squid:S1854";Remove this useless assignment to local variable "fondsen".(Ù¦´êúÿÿÿÿ8å…÷+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÅñÄ‚8’•‰÷+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÆÔ§Æ8è¶ü÷+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ØßÈ¼ÿÿÿÿÿ8Û®û÷+
 `squid:UnusedPrivateMethod"6Remove this unused private "testEffectenbeurs" method.(äşì§8¯ô‹÷+
 T
 squid:S106"9Replace this use of System.out or System.err by a logger.(è’—•8“Åÿ÷+
 T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÆÔ§Æ8è¶ü÷+
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÅñÄ‚8’•‰÷+
-T
 squid:S106"9Replace this use of System.out or System.err by a logger.(¥íœ£8é•÷+
+Msquid:S1481",Remove this unused "fondsen" local variable.(Ù¦´êúÿÿÿÿ8å…÷+
+\squid:S1854";Remove this useless assignment to local variable "fondsen".(Ù¦´êúÿÿÿÿ8å…÷+
 Y
 squid:S106"9Replace this use of System.out or System.err by a logger.(†°ŞŠøÿÿÿÿ8õšñ÷+
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ØßÈ¼ÿÿÿÿÿ8Û®û÷+
-Msquid:S1481",Remove this unused "fondsen" local variable.(Ù¦´êúÿÿÿÿ8å…÷+
+Xsquid:UselessImportCheck"/Remove this unused import 'java.util.Observer'.(«Öí·8‡õª¶÷+
