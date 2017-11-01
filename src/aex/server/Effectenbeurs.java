@@ -3,12 +3,12 @@ package aex.server;
 import aex.client.Fonds;
 import aex.shared.IEffectenBeurs;
 import aex.client.IFonds;
+import fontyspublisher.IRemotePropertyListener;
+import fontyspublisher.RemotePublisher;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Effectenbeurs (remote effectenbeurs)
@@ -18,12 +18,36 @@ import java.util.Random;
 @SuppressWarnings("ALL")
 public class Effectenbeurs extends UnicastRemoteObject implements IEffectenBeurs
 {
+    private RemotePublisher remotePublisher;
+    private Timer timer;
+    private List<IFonds> koersen;
+
     public Effectenbeurs() throws RemoteException
     {
+        String [] properties = new String[]{"koersen"};
+        remotePublisher = new RemotePublisher(properties);
 
+        timer = new Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                getKoersen();
+
+                try
+                {
+                    remotePublisher.inform("koersen", null, koersen);
+                }
+
+                catch (RemoteException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }, 0, 1000);
     }
-
-    private List<IFonds> koersen;
 
     @Override
     public List<IFonds> getKoersen()
@@ -85,5 +109,17 @@ public class Effectenbeurs extends UnicastRemoteObject implements IEffectenBeurs
                 fonds.setKoers(fonds.getKoers() + kommaKoers);
             }
         }
+    }
+
+    @Override
+    public void subscribeRemoteListener(IRemotePropertyListener iRemotePropertyListener, String s) throws RemoteException
+    {
+        remotePublisher.subscribeRemoteListener(iRemotePropertyListener, s);
+    }
+
+    @Override
+    public void unsubscribeRemoteListener(IRemotePropertyListener iRemotePropertyListener, String s) throws RemoteException
+    {
+        remotePublisher.unsubscribeRemoteListener(iRemotePropertyListener, s);
     }
 }

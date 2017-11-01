@@ -1,7 +1,9 @@
 package aex.client;
 
 import aex.shared.IEffectenBeurs;
+import fontyspublisher.IRemotePropertyListener;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -75,5 +77,17 @@ public class MockEffectenbeurs implements IEffectenBeurs
                 fonds.setKoers(fonds.getKoers() + kommaKoers);
             }
         }
+    }
+
+    @Override
+    public void subscribeRemoteListener(IRemotePropertyListener iRemotePropertyListener, String s) throws RemoteException
+    {
+
+    }
+
+    @Override
+    public void unsubscribeRemoteListener(IRemotePropertyListener iRemotePropertyListener, String s) throws RemoteException
+    {
+
     }
 }

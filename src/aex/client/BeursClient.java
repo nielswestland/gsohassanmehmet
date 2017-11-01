@@ -1,5 +1,6 @@
 package aex.client;
 
+import aex.server.Effectenbeurs;
 import aex.shared.IEffectenBeurs;
 
 import java.rmi.NotBoundException;
@@ -22,10 +23,13 @@ public class BeursClient
 
     public BeursClient(String ipaddr, int port)
     {
+        effectenBeurs = null;
+
         try
         {
             registry = LocateRegistry.getRegistry(ipaddr, port);
         }
+
         catch (RemoteException e)
         {
             System.out.println("Registry niet gevonden!");

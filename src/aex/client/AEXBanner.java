@@ -10,6 +10,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.rmi.RemoteException;
+
 public class AEXBanner extends Application
 {
     public static final int WIDTH = 1000;
@@ -40,7 +42,15 @@ public class AEXBanner extends Application
         primaryStage.show();
         primaryStage.toFront();
 
-        controller = new BannerController(this);
+        try
+        {
+            controller = new BannerController(this);
+        }
+        
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
 
         // Start animation: text moves from right to left
         animationTimer = new AnimationTimer()
@@ -98,7 +108,6 @@ public class AEXBanner extends Application
     public void stop()
     {
         animationTimer.stop();
-        controller.stop();
     }
 }
 
